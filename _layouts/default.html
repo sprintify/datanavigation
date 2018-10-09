@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,700" media="all">
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+
+<body>
+	<header>
+		<div class="container">
+			{% include navigation.html %}
+			<h1><a href="/">Bakery<strong>Store</strong></a></h1>
+		</div>
+	</header>
+	<div class="content">
+		{{ content }}
+	</div>
+	<footer>
+		<div class="container">
+			<p class="center-text"> <a href="http://cloudcannon.com">Created by CloudCannon</a></p>
+		</div>
+	</footer>
+	<script>
+		if (window.netlifyIdentity) {
+			window.netlifyIdentity.on("init", user => {
+				if (!user) {
+					window.netlifyIdentity.on("login", () => {
+						document.location.href = "/admin/";
+					});
+				}
+			});
+		}
+	</script>
+</body>
+
+</html>

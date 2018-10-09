@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# This line should *not* be indented
+media_folder: "images/uploads" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "data" # Used in routes, e.g., /admin/collections/blog
+    label: "Menu" # Used in the UI
+    folder: "_data" # The path to the folder where the documents are stored
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields for each document, usually in front matter
+      - {label: "Layout", name: "layout", widget: "hidden", default: "data"}
+      - {label: "Link", name: "link", widget: "string"}
+      - {label: "Name", name: "name", widget: "string"}
